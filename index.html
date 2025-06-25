@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Strona z filmem w tle</title>
+  <title>Strona z filmem w tle i przezroczystym boxem</title>
   <style>
     * {
       margin: 0;
@@ -13,8 +13,8 @@
 
     body, html {
       height: 100%;
+      font-family: Arial, sans-serif;
       overflow: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     video.background-video {
@@ -27,51 +27,41 @@
       z-index: -1;
     }
 
-    .overlay {
-      position: relative;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.5); /* ciemny overlay na filmie */
+    .glass-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      color: #fff;
+      justify-content: center;
+      color: white;
       text-align: center;
-      padding: 2rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      p {
-        font-size: 1rem;
-      }
+      padding: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Video Background -->
+  <!-- Tło wideo -->
   <video class="background-video" autoplay muted loop playsinline>
-    <source src="https://files.catbox.moe/mowpsq.mp4" type="video/mp4" />
+    <source src="https://files.catbox.moe/mowpsq.mp4" type="video/mp4">
     Twoja przeglądarka nie obsługuje wideo w tle.
   </video>
 
-  <!-- Treść na stronie -->
-  <div class="overlay">
-    <h1>Witaj na mojej stronie</h1>
-    <p>Tło tej strony to film z Catbox.moe. Całość działa na GitHub Pages!</p>
+  <!-- Szklany zaokrąglony box -->
+  <div class="glass-box">
+    <div>
+      <h2>Witaj!</h2>
+      <p>To przezroczysty, rozmyty box na środku ekranu.</p>
+    </div>
   </div>
 
 </body>
