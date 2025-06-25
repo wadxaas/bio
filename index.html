@@ -1,66 +1,80 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Strona z filmem w tle i przezroczystym boxem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My guns.lol-like Page</title>
   <style>
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      background: #0f0f13;
+      font-family: 'Segoe UI', sans-serif;
+      color: #e0e0e0;
     }
-
-    body, html {
-      height: 100%;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(31, 31, 35, 0.8);
+      border-radius: 16px;
+      backdrop-filter: blur(20px);
     }
-
-    video.background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #fff;
     }
-
-    .glass-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 300px;
-      height: 300px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .link-btn {
+      display: block;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #6b34fe, #a364f8);
+      border: none;
+      border-radius: 12px;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.2s;
+    }
+    .link-btn:hover {
+      transform: translateY(-2px);
+    }
+    .profile {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      padding: 20px;
+      gap: 12px;
+    }
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #444;
+    }
+    .username {
+      font-size: 1.2rem;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <!-- Tło wideo -->
-  <video class="background-video" autoplay muted loop playsinline>
-    <source src="https://files.catbox.moe/knel4l.mp4" type="video/mp4">
-    Twoja przeglądarka nie obsługuje wideo w tle.
-  </video>
-
-  <!-- Szklany zaokrąglony box -->
-  <div class="glass-box">
-    <div>
-      <h2></h2>
-      <p></p>
+  <div class="container">
+    <div class="profile">
+      <div class="avatar"></div>
+      <div class="username">@TwojNick</div>
+    </div>
+    <h1>Witaj na mojej stronie!</h1>
+    <div class="links">
+      <a class="link-btn" href="#">Link 1</a>
+      <a class="link-btn" href="#">Link 2</a>
+      <a class="link-btn" href="#">Link 3</a>
+      <a class="link-btn" href="#">Link 4</a>
     </div>
   </div>
 
