@@ -3,10 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Moja Strona</title>
+  <title>Strona z filmem w tle</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    video.background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      position: relative;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5); /* ciemny overlay na filmie */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Witaj na mojej stronie!</h1>
-  <p>To jest strona hostowana za pomocą GitHub Pages.</p>
+
+  <!-- Video Background -->
+  <video class="background-video" autoplay muted loop playsinline>
+    <source src="https://files.catbox.moe/mowpsq.mp4" type="video/mp4" />
+    Twoja przeglądarka nie obsługuje wideo w tle.
+  </video>
+
+  <!-- Treść na stronie -->
+  <div class="overlay">
+    <h1>Witaj na mojej stronie</h1>
+    <p>Tło tej strony to film z Catbox.moe. Całość działa na GitHub Pages!</p>
+  </div>
+
 </body>
 </html>
